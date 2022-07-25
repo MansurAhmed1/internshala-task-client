@@ -54,7 +54,7 @@ const AddProduct = () => {
 
           // send to your database
 
-          const url = "http://localhost:5000/added";
+          const url = "https://malalalaaaaaaa.herokuapp.com/added";
           fetch(url, {
             method: "POST",
             headers: {

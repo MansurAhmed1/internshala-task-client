@@ -51,12 +51,7 @@ const Header = () => {
                 >
                   Home
                 </CustomLink>
-                <CustomLink
-                  className="mx-2 px-2 py-1   text-black  headerAnchor"
-                  to={"/portfolio"}
-                >
-                  Portfolio
-                </CustomLink>
+              
                 <CustomLink
                   className="mx-2 px-2 py-1  text-black  headerAnchor "
                   to={"/blog"}
@@ -67,7 +62,7 @@ const Header = () => {
                   <CustomLink
                     className="mx-2 px-2 py-1  text-black headerAnchor  "
                     to="/dashboard"y
-                    
+
                   >
                     Dashboard
                   </CustomLink>
@@ -119,12 +114,7 @@ const Header = () => {
             >
               Home
             </CustomLink>
-            <CustomLink
-              className="mx-2 px-4 inline-block  w-52 py-2 text-lg headerAnchor "
-              to={"/portfolio"}
-            >
-              Portfolio
-            </CustomLink>
+         
             <CustomLink
               className="mx-2 px-4 inline-block w-52 py-2 text-lg headerAnchor "
               to={"/blog"}

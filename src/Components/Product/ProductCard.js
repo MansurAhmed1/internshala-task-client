@@ -1,9 +1,11 @@
 /** @format */
 
+
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product}) => {
+
   const {
     _id,
     name,
@@ -11,6 +13,8 @@ const ProductCard = ({ product }) => {
     img,
     qunatity
   } = product;
+
+
 
   return (
     <div class="card relative  border-gray-200 border bg-white drop-shadow-xl rounded-none">

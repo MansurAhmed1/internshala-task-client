@@ -14,7 +14,7 @@ const Table = ({ product,index }) => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are You sure Want to delete this product?");
     if (procced) {
-      const url = `http://localhost:5000/deleteproducts/${id}`;
+      const url = `https://malalalaaaaaaa.herokuapp.com/deleteproducts/${id}`;
       fetch(url, {
         method: "DELETE"
       })

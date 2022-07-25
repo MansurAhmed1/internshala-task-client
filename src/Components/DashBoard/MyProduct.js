@@ -21,7 +21,7 @@ const MyProduct = () => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/myproducts?email=${email}`, {
+      fetch(`https://malalalaaaaaaa.herokuapp.com/myproducts?email=${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

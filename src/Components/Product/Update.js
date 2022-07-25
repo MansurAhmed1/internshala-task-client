@@ -14,7 +14,7 @@ const Update = () => {
   const [update, setupdate] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://malalalaaaaaaa.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setupdate(data));
   }, [update, id]);
@@ -27,7 +27,7 @@ const Update = () => {
       quantity: e.target.quantity.value
     };
     console.log(updateQuantity);
-    const url = `http://localhost:5000/updatequantity/${id}`;
+    const url = `https://malalalaaaaaaa.herokuapp.com/updatequantity/${id}`;
 
     fetch(url, {
       method: "PUT",
@@ -51,7 +51,7 @@ const Update = () => {
     const updatePrice = {
       price: e.target.price.value
     };
-    const url = `http://localhost:5000/updateprice/${id}`;
+    const url = `https://malalalaaaaaaa.herokuapp.com/updateprice/${id}`;
 
     fetch(url, {
       method: "PUT",

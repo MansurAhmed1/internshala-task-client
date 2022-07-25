@@ -16,7 +16,8 @@ import Update from "./Components/Product/Update";
 import Register from "./Components/Register/Register";
 import Footer from "./Components/Footer/Footer";
 import RequireAuth from "./Components/RequireAuth";
-import Portfolio from "./Components/Portfolio/Portfolio";
+
+import Blog from "./Components/Blog";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
 
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route
           path="/update/:id"
           element={

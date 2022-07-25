@@ -16,12 +16,11 @@ const ManageInventory = () => {
  
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://malalalaaaaaaa.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
         setProducts(data);
-   
       });
   }, [user, products]);
 

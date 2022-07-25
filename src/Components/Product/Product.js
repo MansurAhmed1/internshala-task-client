@@ -1,14 +1,15 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 import Loading from "../Loading.js";
 import ProductCard from "../Product/ProductCard.js";
 const Product = () => {
   const [products, setproducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const navigate=useNavigate()
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://malalalaaaaaaa.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setproducts(data);
@@ -28,6 +29,9 @@ const Product = () => {
           <ProductCard key={index} product={product}></ProductCard>
         ))}
       </div>
+      <div className="flex justify-center mt-8"><button className="btn rounded border border-black bg-violet-800 text-white lg:px-6 px-16   hover:bg-white hover:text-black  hover:border-black" onClick={()=>{
+        navigate("/dashboard")
+      }}>Managa Inventory</button></div>
     </div>
   );
 };
