@@ -1,0 +1,20 @@
+
+
+.bannerImage{
+    height: 350px;
+    width: 500px;
+    }
+    .bannermain{
+        text-align: left;
+    }
+
+@media only screen and (max-width: 600px) {
+    .bannerImage{
+      height: 250px;
+      width: 90%;
+      }
+      .bannermain{
+        text-align: center;
+    }
+
+  }
