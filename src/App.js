@@ -28,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
 
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
         <Route
           path="/update/:id"
           element={
@@ -72,7 +73,7 @@ function App() {
               </RequireAuth>
             }
           ></Route>
-          <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+   
         </Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

@@ -66,7 +66,8 @@ const Header = () => {
                 {user && (
                   <CustomLink
                     className="mx-2 px-2 py-1  text-black headerAnchor  "
-                    to="/dashboard"
+                    to="/dashboard"y
+                    
                   >
                     Dashboard
                   </CustomLink>
