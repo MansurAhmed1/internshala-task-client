@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle
 } from "react-firebase-hooks/auth";
@@ -13,14 +12,15 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../firebase.init";
 import useToken from "../Hooks/useToken";
 import Loading from "../Loading";
-import { sendPasswordResetEmail } from "firebase/auth";
+import {sendPasswordResetEmail} from "firebase/auth";
+// import { sendPasswordResetEmail } from "firebase/auth";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
 
-  const [sendPasswordResetEmail, sending, resetError] =
-    useSendPasswordResetEmail(auth);
+  // const [sendPasswordResetEmail, sending, resetError] =
+  //   useSendPasswordResetEmail(auth);
 
   const {
     register,
@@ -43,14 +43,14 @@ const Login = () => {
     }
   }, [token, from, navigate]);
 
-  if (loading || gLoading || sending) {
+  if (loading || gLoading) {
     return <Loading></Loading>;
   }
 
-  if (emailError || gError || resetError) {
+  if (emailError || gError) {
     signInError = (
       <p className="text-red-500">
-        <small>{emailError?.message || gError?.message || resetError?.message}</small>
+        <small>{emailError?.message || gError?.message}</small>
       </p>
     );
   }
@@ -58,8 +58,13 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(email, data.password);
   };
-
-
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(auth,email).then(() => {
+      toast("send email")
+    }).catch((error)=> {
+      toast(error.message)
+      })
+  };
   return (
     <div
       style={{ height: "95vh" }}
@@ -151,10 +156,7 @@ const Login = () => {
           <p className="flex justify-between">
             <p>
               {" "}
-              <button   onClick={async () => {
-          await sendPasswordResetEmail(email);
-          toast('Sent email');
-        }}    >
+              <button onClick={handlePasswordReset}>
                 <small className="text-red-500">Reset Password </small>
               </button>
             </p>

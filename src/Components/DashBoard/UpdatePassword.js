@@ -10,7 +10,7 @@ const UpdatePassword = () => {
   console.log(password);
   console.log(typeof password);
   const [updatePassword, updating, error] = useUpdatePassword(auth);
-
+console.log(password,updatePassword, updating, error)
   if (error) {
     return (
       <div>
