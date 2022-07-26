@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle
 } from "react-firebase-hooks/auth";
@@ -18,8 +19,8 @@ const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
 
-  // const [sendPasswordResetEmail, sending, resetError] =
-  //   useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
 
   const {
     register,
@@ -30,7 +31,7 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   const [token] = useToken(user || gUser);
-  console.log(user);
+
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
@@ -42,14 +43,14 @@ const Login = () => {
     }
   }, [token, from, navigate]);
 
-  if (loading || gLoading) {
+  if (loading || gLoading || sending) {
     return <Loading></Loading>;
   }
 
-  if (emailError || gError) {
+  if (emailError || gError || resetError) {
     signInError = (
       <p className="text-red-500">
-        <small>{emailError?.message || gError?.message}</small>
+        <small>{emailError?.message || gError?.message || resetError?.message}</small>
       </p>
     );
   }
@@ -57,11 +58,8 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(email, data.password);
   };
-  const handlePasswordReset = () => {
-    sendPasswordResetEmail(auth,email).then(() => {
-      toast("send email")
-    });
-  };
+
+
   return (
     <div
       style={{ height: "95vh" }}
@@ -153,7 +151,10 @@ const Login = () => {
           <p className="flex justify-between">
             <p>
               {" "}
-              <button onClick={handlePasswordReset}>
+              <button   onClick={async () => {
+          await sendPasswordResetEmail(email);
+          toast('Sent email');
+        }}    >
                 <small className="text-red-500">Reset Password </small>
               </button>
             </p>
