@@ -35,7 +35,56 @@ const Header = () => {
               </button>
             </div>
             <div>
-             <h3 className="font-bold  text-black text-2xl text-center ml-8 lg:ml-0 ">DHAKAIYA </h3>
+              <div   style={{display:"flex",flexDirection:"row"}} className="ml-8 lg:ml-0 ">
+                <div>
+                  {" "}
+                  <div className="border   p-1 text-2xl mx-1 font-bold">
+                    D
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border   p-1 text-2xl mx-1 font-bold">
+                    H
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border   p-1 text-2xl mx-1 font-bold">
+                    A
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border   p-1 text-2xl mx-1 font-bold">
+                    K
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border   p-1 text-2xl mx-1 font-bold">
+                    A
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border  p-1 text-2xl mx-1 font-bold">
+                    I
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border  p-1 text-2xl mx-1 font-bold">
+                    Y
+                  </div>
+                </div>
+                <div className="flex ">
+                  {" "}
+                  <div className="border  p-1 text-2xl mx-1 font-bold">
+                    A
+                  </div>
+                </div>
+              </div>{" "}
             </div>
           </div>
           <div className="navRight">
@@ -47,7 +96,7 @@ const Header = () => {
                 >
                   Home
                 </CustomLink>
-              
+
                 <CustomLink
                   className="mx-2 px-2 py-1  text-black  headerAnchor "
                   to={"/blog"}
@@ -57,8 +106,8 @@ const Header = () => {
                 {user && (
                   <CustomLink
                     className="mx-2 px-2 py-1  text-black headerAnchor  "
-                    to="/dashboard"y
-
+                    to="/dashboard"
+                    y
                   >
                     Dashboard
                   </CustomLink>
@@ -110,7 +159,7 @@ const Header = () => {
             >
               Home
             </CustomLink>
-         
+
             <CustomLink
               className="mx-2 px-4 inline-block w-52 py-2 text-lg headerAnchor "
               to={"/blog"}
