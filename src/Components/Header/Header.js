@@ -35,11 +35,7 @@ const Header = () => {
               </button>
             </div>
             <div>
-              <img
-                className="h-6 w-44 ml-5 lg:ml-0"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcbehD5dhPR3c2dpf1Ei92D8AAp4zrhJYt6Tc06tF1BwYYgxVg-cp6zHIooNprk-Ezg&usqp=CAU"
-                alt=""
-              />
+             <h3 className="font-bold  text-black text-2xl text-center ml-8 lg:ml-0 ">DHAKAIYA </h3>
             </div>
           </div>
           <div className="navRight">
@@ -93,7 +89,7 @@ const Header = () => {
               <img
                 src={
                   navTrigger
-                    ? "https://cdn-icons.flaticon.com/png/512/2889/premium/2889724.png?token=exp=1656416539~hmac=a6019334df2994ecd7d479adfef8e265"
+                    ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2s7S6S9_VT_S8oAl8vKD7A4Be-4JxxFeysw&usqp=CAU"
                     : "https://cdn-icons-png.flaticon.com/128/1828/1828551.png"
                 }
                 className="w-8 h-8 "
@@ -103,11 +99,11 @@ const Header = () => {
           </div>
         </div>
         <div
-          className={`smallMenu block z-40 lg:hidden pb-5  bg-teal-400   w-full absolute left-0 top-16 ${
+          className={`smallMenu block z-40 lg:hidden pb-5    w-full absolute left-0 top-16 ${
             navTrigger ? "block" : "hidden"
           }  `}
         >
-          <div className="grid grid-cols-1 py-5 gap-y-6 text-center  ">
+          <div className="grid grid-cols-1 py-5 gap-y-6 text-center  shadow-lg bg-white ">
             <CustomLink
               className="mx-2 px-4 w-52 py-2 inline-block text-lg headerAnchor "
               to={"/"}

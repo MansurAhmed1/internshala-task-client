@@ -114,7 +114,6 @@ const Update = () => {
               </div>
 
               <input
-                // className="btn w-full btn-primary bg-stone-700  hover:bg-stone-700 text-white"
                 className="btn hover:bg-violet-800 w-full text-white  hover:text-white  px-11 bg-black"
                 type="submit"
                 value="UPDATE QUANTITY"
