@@ -11,13 +11,13 @@ import MyProduct from "./Components/DashBoard/MyProduct";
 import Error404 from "./Components/Error404/Error404";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
-import Login from "./Components/Login/Login";
 import Update from "./Components/Product/Update";
+import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Footer from "./Components/Footer/Footer";
 import RequireAuth from "./Components/RequireAuth";
-
 import Blog from "./Components/Blog";
+import UpdatePassword from "./Components/DashBoard/UpdatePassword";
 
 function App() {
   return (
@@ -74,7 +74,8 @@ function App() {
               </RequireAuth>
             }
           ></Route>
-   
+
+         <Route path="updateprofile" element={<UpdatePassword></UpdatePassword>}></Route>
         </Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

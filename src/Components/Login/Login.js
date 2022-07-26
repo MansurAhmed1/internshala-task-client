@@ -58,8 +58,8 @@ const Login = () => {
     signInWithEmailAndPassword(email, data.password);
   };
   const handlePasswordReset = () => {
-    sendPasswordResetEmail(auth, "mansurahmed75236@gmail.com").then(() => {
-      console.log("email send");
+    sendPasswordResetEmail(auth,email).then(() => {
+      toast("send email")
     });
   };
   return (

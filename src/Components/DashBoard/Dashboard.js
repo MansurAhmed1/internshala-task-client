@@ -56,6 +56,14 @@ const Dashboard = () => {
                 Add Review
               </CustomLink>
             </li>
+            <li>
+              <CustomLink
+                className=" px-2 py-1  text-black  headerAnchor "
+                to="/dashboard/updateprofile"
+              >
+                Update Profile
+              </CustomLink>
+            </li>
         
           </>
         </ul>
